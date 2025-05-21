@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <title>Chat UI</title>
+</head>
+<body>
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="MedicLLM Logo" class="sidebar-logo" style="width:38px;vertical-align:middle;margin-right:10px;">
+                MedicLLM
+            </div>
+            <button class="new-chat-btn" id="new-chat-btn">+ New Chat</button>
+            <button class="theme-toggle-btn" id="theme-toggle-btn" style="margin: 0 24px 16px 24px;">🌙 Dark Mode</button>
+            <ul class="chat-history" id="chat-history">
+                <!-- Old chats will be listed here -->
+            </ul>
+            <div class="sidebar-footer">
+                <span class="sidebar-powered">Powered by <b>MedicLLM</b></span>
+            </div>
+        </aside>
+        <section class="chat-section">
+            <div class="chat-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="MedicLLM Logo" class="header-logo" style="width:32px;vertical-align:middle;margin-right:10px;">
+                Medical Assistant Chat
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <form class="user-info-form" id="user-info-form" style="display:none;">
+                <div class="form-group">
+                    <input type="text" id="patient-id" class="form-input" placeholder="Patient ID" required />
+                </div>
+                <div class="form-group">
+                    <input type="number" id="user-age" class="form-input" placeholder="Age" min="1" required />
+                </div>
+                <div class="form-group">
+                    <select id="user-gender" class="form-input" required>
+                        <option value="" disabled selected>Gender</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="mental-status" class="form-input" placeholder="Mental Status Examination" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea id="presenting-complaints" class="form-input" placeholder="Presenting Complaints" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="history" class="form-input" placeholder="History (Onset and Duration)" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="diagnoses" class="form-input" placeholder="Known psychiatric diagnoses" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="family-history" class="form-input" placeholder="Family History" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="allergies" class="form-input" placeholder="Allergies" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="medications" class="form-input" placeholder="Current medications" />
+                </div>
+                <div class="form-group">
+                    <textarea id="observations" class="form-input" placeholder="Key Observations during Consultation" rows="2"></textarea>
+                </div>
+                <button type="submit" class="send-btn">Start Chat</button>
+            </form>
+            <form class="chat-input-area" id="chat-form">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type your message..." autocomplete="off" />
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </section>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

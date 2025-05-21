@@ -42,7 +42,7 @@ To ensure trust and interpretability, it integrates an **Explainable AI (XAI)** 
 
 ### Webapp Walkthrough
 
-[Demo](data\webapp.mp4)
+[Demo](data/webapp.mp4)
 
 ---
 
@@ -95,7 +95,7 @@ To ensure trust and interpretability, it integrates an **Explainable AI (XAI)** 
 ## 📬 Contact
 
 For questions, collaborations, or feedback:
-- [Your Name](mailto:kevalsaud25@gmail.com)
+- [Keval Saud](mailto:kevalsaud25@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/keval-sing-saud-1945231b2/)
 
 ---

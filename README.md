@@ -42,7 +42,8 @@ To ensure trust and interpretability, it integrates an **Explainable AI (XAI)** 
 
 ### Webapp Walkthrough
 
-[Demo](data/webapp.mp4)
+[![Watch the video]](https://youtu.be/DmLgPgzHKw0)
+
 
 ---
 

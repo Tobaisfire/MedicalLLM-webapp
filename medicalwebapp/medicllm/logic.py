@@ -27,9 +27,6 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 
 
-
-
-
 client = QdrantClient(url="http://localhost:6333")
 embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en") 
 
@@ -501,7 +498,7 @@ class MedicalAssistant:
         treatment = self._extract_with_pattern(pattern_treatment, debate_result["final_debate"])
         medications = self._extract_with_pattern(pattern_medications, debate_result["final_debate"])
         followup = self._extract_with_pattern(pattern_followup, debate_result["final_debate"])
-        report = f"""# Patient Medical Report\n\n## Report Information\n- **Case ID**: {debate_result["debate_id"]}\n- **Generated**: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n- **Processing Time**: {debate_result["total_duration"]:.2f} seconds\n- **Debate Rounds**: {len(debate_result["debate_rounds"])}\n\n## Patient Information\n{debate_result["patient_info"]}\n\n## Diagnosis\n{diagnosis}\n\n## Treatment Plan\n{treatment}\n\n## Medications\n{medications}\n\n## Precautions and Follow-up\n{followup}\n\n## Debate Analysis\nThe final recommendations were reached after analyzing inputs from three specialized medical agents and conducting {len(debate_result["debate_rounds"])} rounds of structured debate.\n\n### Agent Performance\n![API Timing Chart](api_timing_chart.png)\n\n### Response Comparison\n![Response Comparison](response_comparison.png)\n\n### Detailed Debate Flow\n![Debate Graph](debate_graph.png)\n\n## Conclusion\nThis medical case was processed using an argumentative AI framework that combines multiple expert perspectives to reach a clinically sound conclusion.\n"""
+        report = f"""# Patient Medical Report\n\n## Report Information\n- **Case ID**: {debate_result["debate_id"]}\n- **Generated**: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n- **Processing Time**: {debate_result["total_duration"]:.2f} seconds\n- **Debate Rounds**: {len(debate_result["debate_rounds"])}\n\n## Patient Information\n{debate_result["patient_info"]}\n\n## Diagnosis\n{diagnosis}\n\n## Treatment Plan\n{treatment}\n\n## Medications\n{medications}\n\n## Precautions and Follow-up\n{followup}\n\n## Debate Analysis\nThe final recommendations were reached after analyzing inputs from three specialized medical agents and conducting {len(debate_result["debate_rounds"])} rounds of structured debate.\n\n## Conclusion\nThis medical case was processed using an argumentative AI framework that combines multiple expert perspectives to reach a clinically sound conclusion.\n"""
         report_filename = os.path.join(debate_result["output_dir"], "patient_report.md")
         with open(report_filename, "w") as f:
             f.write(report)

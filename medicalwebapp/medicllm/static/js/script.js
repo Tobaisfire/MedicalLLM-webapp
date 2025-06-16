@@ -274,6 +274,7 @@ userInfoForm.addEventListener('submit', async function(e) {
     }
 });
 
+
 chatForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const userMsg = chatInput.value.trim();

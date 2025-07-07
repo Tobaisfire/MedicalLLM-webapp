@@ -12,3 +12,6 @@ networkx>=3.1
 requests>=2.28.0 
 gunicorn
 whitenoise
+langchain_huggingface
+langchain_openai
+langchain_qdrant
